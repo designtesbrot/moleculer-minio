@@ -1,0 +1,8 @@
+.vscode
+.idea
+benchmarks
+coverage
+dev
+docs
+examples
+typings

@@ -1,0 +1,30 @@
+version: "2"
+
+services:
+  api:
+    build: ./../
+    entrypoint: ./node_modules/.bin/nodemon -L
+    command: examples/api.service.js
+    volumes:
+      - ./../:/usr/src
+    ports:
+      - 3000:3000
+  service:
+    build: ./../
+    entrypoint: ./node_modules/.bin/nodemon -L
+    command: examples/minio.service.js
+    volumes:
+      - ./../:/usr/src
+      - ./data/tmp:/tmp
+  minio:
+    image: minio/minio
+    environment:
+      MINIO_ACCESS_KEY: AKIAIOSFODNN7EXAMPLE
+      MINIO_SECRET_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    volumes:
+      - ./minio/data:/data
+  	ports:
+	  - 9000:9000
+    command: server /data
+  nats:
+    image: nats

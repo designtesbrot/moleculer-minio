@@ -1,0 +1,72 @@
+{
+  "name": "moleculer-minio",
+  "version": "1.0.0",
+  "description": "A minio sdk wrapper as a service for the moleculer framework",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/designtesbrot/moleculer-minio"
+  },
+  "author": "caspar.bauer0@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn install && nodemon examples/index.js",
+    "demo": "yarn install && node examples/index.js",
+    "ci": "yarn install && jest --watch",
+    "test": "yarn install && jest --coverage --detectOpenHandles",
+    "lint": "yarn install && eslint --ext=.js --fix src",
+    "deps": "yarn install && yarn-check -u",
+    "postdeps": "yarn test",
+    "coverall": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "docgen": "node ./node_modules/moleculer-docgen src/service.js"
+  },
+  "keywords": [
+    "minio",
+    "s3",
+    "microservices",
+    "microservice",
+    "moleculer"
+  ],
+  "devDependencies": {
+    "coveralls": "3.0.2",
+    "eslint": "5.10.0",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
+    "moleculer": "^0.13.3",
+    "moleculer-docgen": "^0.2.1",
+    "moleculer-repl": "^0.5.2",
+    "moleculer-web": "^0.8.2",
+    "multer": "^1.4.1",
+    "nats": "^1.0.1",
+    "node-res": "^5.0.1",
+    "nodemon": "1.18.9",
+    "yarn-check": "0.0.3"
+  },
+  "peerDependencies": {
+    "moleculer": ">= 0.13.0"
+  },
+  "dependencies": {
+    "minio": "^7.0.2",
+    "ramda": "0.26.1",
+    "ramda-adjunct": "^2.10.0"
+  },
+  "engines": {
+    "node": ">= 6.x.x"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./src",
+    "roots": [
+      "../test"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/services/"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "<rootDir>"
+    ]
+  }
+}

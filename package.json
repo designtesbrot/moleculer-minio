@@ -1,6 +1,6 @@
 {
   "name": "moleculer-minio",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A minio sdk wrapper as a service for the moleculer framework",
   "main": "index.js",
   "repository": {

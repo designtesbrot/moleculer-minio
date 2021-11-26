@@ -46,12 +46,12 @@
     "moleculer": ">= 0.13.0"
   },
   "dependencies": {
-    "minio": "^7.0.2",
-    "ramda": "0.26.1",
-    "ramda-adjunct": "^2.10.0"
+    "minio": "^7.0.21",
+    "ramda": "0.27.1",
+    "ramda-adjunct": "^2.35.0"
   },
   "engines": {
-    "node": ">= 6.x.x"
+    "node": ">= 14.x.x"
   },
   "jest": {
     "coverageDirectory": "../coverage",

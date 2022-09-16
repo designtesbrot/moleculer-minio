@@ -1,4 +1,5 @@
-const {MoleculerError} = require("moleculer/src/errors");
+const { Errors } = require('moleculer');
+const MoleculerError = Errors.MoleculerError;
 
 /**
  * Error that should be thrown when the Minio Service can not be Initialized
